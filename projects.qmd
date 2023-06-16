@@ -2,11 +2,11 @@
 title: "Projects"
 ---
 
-## Who believes in green growth? 
+## Who believes in green growth?
 
-Abstract:
+**Abstract:** This note asks what types of individuals are more or less likely to believe in the core tenet of green growth, namely that climate change mitigation and environmental protection is compatible with or complementary to continued economic growth. Based on data from ISSP 2010, I offer a preliminary answer. Factors associated with believing in green growth include being highly educated, politically right wing, having high socio-economic status, and having managerial employment. Several of these findings indicate that those who are further removed from the extractive and manufacturing processes that result in environmental degradation may perceive the prospects for green growth as being more realistic.
 
 ## The narrow impact of employment-related greenhouse gas emissions on climate policy opinions
 
-Abstract:
-
+**Abstract:** A burgeoning literature identifies geographic or employment-based ties to fossil fuel production as a constraining factor in shaping public climate policy opinions but also points to certain limits to this effect. Bechtel, Genovese, and Scheve (2019) make an important contribution to this strand of research by showing that employment in high-emissions sectors more generally has a substantially large, negative influence on a set of general climate politics opinions. In this research note, I replicate and extend their findings using their own data as well as the 2016 European Social Survey. The original
+findings appear verifiable, robust, and repeatable. Investigating their generalizability, I propose and find support for the hypothesis that this negative effect is more pronounced for fossil phaseout policies like carbon taxes than for green industrial policies that subsidize low-emissions technologies.

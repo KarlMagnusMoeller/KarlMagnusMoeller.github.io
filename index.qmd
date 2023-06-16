@@ -5,10 +5,8 @@ about:
   image: images\picture.jpg
 ---
 
-I am a PhD student in the Department of Political Science, Aarhus University in Denmark. I am trying my best to do research that can help us understand the political obstacles to, and ultimately speed up, decarbonisation. My PhD research focuses specifically on the political effects of growing renewable energy industries. Do countries where these industries become economically important also become more willing and able to phase out fossil fuels through abmitious climate and energy policy?
+I am a PhD student in the Department of Political Science, Aarhus University in Denmark affiliated with the Comparative Politics section. In my work, I am trying my best to do research that can help us understand the political obstacles to, and ultimately speed up, decarbonisation. My PhD research focuses specifically on the political effects of expanding renewable energy industries. Do countries where these industries become economically important also become more willing and able to phase out fossil fuels through ambitious climate and energy policy?
 
-When I'm not pondering how best to answer this question, I am mostly hanging out with my two kids on the many playgrounds in and around Aarhus or making them food they will most likely refuse to eat.
+When I'm not pondering how best to answer this question, I am mostly hanging out with my two kids on the many playgrounds in and around Aarhus or cooking them food they will most likely refuse to eat (unless it is porridge).
 
-On this website, you can find an overview of my working papers and [other projects](projects.qmd) as well as a list of my [teaching and other professional experience](about.qmd).
-
-This is a test change
+This website contains an overview of my [working papers](papers.qmd) and [other projects](projects.qmd) as well as a list of my [teaching and other professional experience](about.qmd).

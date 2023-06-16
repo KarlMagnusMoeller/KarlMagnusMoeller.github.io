@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About me",
+    "section": "",
+    "text": "I am a PhD student in the Department of Political Science, Aarhus University in Denmark affiliated with the Comparative Politics section. In my work, I am trying my best to do research that can help us understand the political obstacles to, and ultimately speed up, decarbonisation. My PhD research focuses specifically on the political effects of expanding renewable energy industries. Do countries where these industries become economically important also become more willing and able to phase out fossil fuels through ambitious climate and energy policy?\nWhen I’m not pondering how best to answer this question, I am mostly hanging out with my two kids on the many playgrounds in and around Aarhus or cooking them food they will most likely refuse to eat (unless it is porridge).\nThis website contains an overview of my working papers and other projects as well as a list of my teaching and other professional experience."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Teaching and background",
+    "section": "",
+    "text": "Course convener of Comparative Climate Politics (spring 2024)\nInstructor in Public Policy (spring 2022)\nInstructor in Organizational Analysis (spring 2017)"
+  },
+  {
+    "objectID": "about.html#educational-background",
+    "href": "about.html#educational-background",
+    "title": "Teaching and background",
+    "section": "Educational background",
+    "text": "Educational background\nMSc in Political Science | Sept 2019 - Jan 2021 | Aarhus University | Denmark\nMSc in International Political Economy (Research) | Sept 2018 - Aug 2019 | London School of Economics and Political Science, LSE | United Kingdom"
+  },
+  {
+    "objectID": "about.html#professional-experience",
+    "href": "about.html#professional-experience",
+    "title": "Teaching and background",
+    "section": "Professional experience",
+    "text": "Professional experience\nDanish Center for Social Science Research, VIVE | Student assistant\nDanish Institute for International Studies, DIIS | Student assistant"
+  },
+  {
+    "objectID": "papers.html#paper-2",
+    "href": "papers.html#paper-2",
+    "title": "Working papers",
+    "section": "Paper 2",
+    "text": "Paper 2"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Abstract: This note asks what types of individuals are more or less likely to believe in the core tenet of green growth, namely that climate change mitigation and environmental protection is compatible with or complementary to continued economic growth. Based on data from ISSP 2010, I offer a preliminary answer. Factors associated with believing in green growth include being highly educated, politically right wing, having high socio-economic status, and having managerial employment. Several of these findings indicate that those who are further removed from the extractive and manufacturing processes that result in environmental degradation may perceive the prospects for green growth as being more realistic."
+  },
+  {
+    "objectID": "projects.html#the-narrow-impact-of-employment-related-greenhouse-gas-emissions-on-climate-policy-opinions",
+    "href": "projects.html#the-narrow-impact-of-employment-related-greenhouse-gas-emissions-on-climate-policy-opinions",
+    "title": "Projects",
+    "section": "The narrow impact of employment-related greenhouse gas emissions on climate policy opinions",
+    "text": "The narrow impact of employment-related greenhouse gas emissions on climate policy opinions\nAbstract: A burgeoning literature identifies geographic or employment-based ties to fossil fuel production as a constraining factor in shaping public climate policy opinions but also points to certain limits to this effect. Bechtel, Genovese, and Scheve (2019) make an important contribution to this strand of research by showing that employment in high-emissions sectors more generally has a substantially large, negative influence on a set of general climate politics opinions. In this research note, I replicate and extend their findings using their own data as well as the 2016 European Social Survey. The original findings appear verifiable, robust, and repeatable. Investigating their generalizability, I propose and find support for the hypothesis that this negative effect is more pronounced for fossil phaseout policies like carbon taxes than for green industrial policies that subsidize low-emissions technologies."
+  }
+]
