@@ -1,0 +1,14 @@
+{
+  "hash": "bd653373829a426b9b13631d435b4ea1",
+  "result": {
+    "markdown": "---\ntitle: \"Research interests\"\n---\n\n\nI am interested in the politics of climate and energy policy as it manifests at multiple levels. My PhD research focuses mostly on the country-comparative level, but I have also studied corporate climate lobbying and public opinion on these topics.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
