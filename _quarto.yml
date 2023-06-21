@@ -11,6 +11,7 @@ website:
       - about.qmd
       - papers.qmd
       - projects.qmd
+      - ccpdash.qmd
 
 format:
   html:

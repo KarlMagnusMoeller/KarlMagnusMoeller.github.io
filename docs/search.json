@@ -47,5 +47,33 @@
     "title": "Projects",
     "section": "The narrow impact of employment-related greenhouse gas emissions on climate policy opinions",
     "text": "The narrow impact of employment-related greenhouse gas emissions on climate policy opinions\nAbstract: A burgeoning literature identifies geographic or employment-based ties to fossil fuel production as a constraining factor in shaping public climate policy opinions but also points to certain limits to this effect. Bechtel, Genovese, and Scheve (2019) make an important contribution to this strand of research by showing that employment in high-emissions sectors more generally has a substantially large, negative influence on a set of general climate politics opinions. In this research note, I replicate and extend their findings using their own data as well as the 2016 European Social Survey. The original findings appear verifiable, robust, and repeatable. Investigating their generalizability, I propose and find support for the hypothesis that this negative effect is more pronounced for fossil phaseout policies like carbon taxes than for green industrial policies that subsidize low-emissions technologies."
+  },
+  {
+    "objectID": "ccpdash.html",
+    "href": "ccpdash.html",
+    "title": "Comparative climate politics dashboard",
+    "section": "",
+    "text": "This page provides an overview of how countries compare to each other across time with regards to their measurable climate policy performance. Some countries are consistent top scorers, others have improved over time, and there is significant and telling variation across different indicators of climate policy stringency, ambition, effort, or whatever we want to call it."
+  },
+  {
+    "objectID": "ccpdash.html#carbon-pricing-scores",
+    "href": "ccpdash.html#carbon-pricing-scores",
+    "title": "Comparative climate politics dashboard",
+    "section": "Carbon pricing scores",
+    "text": "Carbon pricing scores\nThe OECD has provided a fantastic public service to those interested in comparative climate policy by calculated not only explicit carbon prices but the total taxation of CO2 emissions that results from various energy-related policy instruments including explicit carbon prices and emissions trading schemes and fuel excise taxes. The downside of this data is that it covers just 44 countries for three years; 2012, 2015, and 2018. This illustrates how demanding the creation of more encompassing climate policy indicators really is."
+  },
+  {
+    "objectID": "ccpdash.html#fossil-fuel-subsidies-per-capita",
+    "href": "ccpdash.html#fossil-fuel-subsidies-per-capita",
+    "title": "Comparative climate politics dashboard",
+    "section": "Fossil fuel subsidies per capita",
+    "text": "Fossil fuel subsidies per capita\nComing soon"
+  },
+  {
+    "objectID": "ccpdash.html#emissions-weighted-carbon-prices",
+    "href": "ccpdash.html#emissions-weighted-carbon-prices",
+    "title": "Comparative climate politics dashboard",
+    "section": "Emissions-weighted carbon prices",
+    "text": "Emissions-weighted carbon prices\nComing soon"
   }
 ]

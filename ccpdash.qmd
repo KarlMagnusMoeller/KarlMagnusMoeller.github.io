@@ -1,0 +1,68 @@
+---
+title: "Comparative climate politics dashboard"
+format: 
+  html:
+    fig-width: 10
+    fig-height: 13
+execute:
+  echo: false
+  warning: false
+  error: false
+---
+
+This page provides an overview of how countries compare to each other across time with regards to their measurable climate policy performance. Some countries are consistent top scorers, others have improved over time, and there is significant and telling variation across different indicators of climate policy stringency, ambition, effort, or whatever we want to call it.
+
+## Carbon pricing scores
+
+The OECD has provided a fantastic public service to those interested in comparative climate policy by calculated not only explicit carbon prices but the total taxation of CO~2~ emissions that results from various energy-related policy instruments including explicit carbon prices and emissions trading schemes and fuel excise taxes. The downside of this data is that it covers just 44 countries for three years; 2012, 2015, and 2018. This illustrates how demanding the creation of more encompassing climate policy indicators really is.
+
+```{r cps}
+
+#| warning: false
+#| echo: false
+#| error: false
+
+pacman::p_load(tidyverse, gghighlight)
+
+cps <- read.csv(here::here("data","OECD_effective_carbon_rates_2012_2018.csv")) %>% 
+  rename(ccode = 1) %>% 
+  filter(ccode != "ALL" & INDICATOR == "CPS")
+
+vars <- cps %>% distinct(Sector,Price,Coverage) %>% rename(s=1,p=2,c=3)
+
+gghighlight_facet <- function(s,p,c) {
+  
+  data <- cps %>%
+    subset(Sector == s & Price == p & Coverage == c) %>% 
+    group_by(Year) %>% mutate(Rank = dense_rank(desc(Value)))
+  
+  data %>% 
+    ggplot(aes(Year, Value)) +
+    geom_line(aes(group=ccode),size=1) +
+    geom_point(aes(color=Rank),size=3) +
+    gghighlight(unhighlighted_params = list(linewidth=0.5,alpha=0.5),
+              use_direct_label = FALSE) +
+    theme_bw() +
+    facet_wrap(~ccode) +
+    labs(title = "Carbon Pricing Scores among 44 countries, 2012-2018",
+         subtitle = glue::glue("Sector: {s}, Price level: {p}, Coverage: {c}")) +
+    scale_color_viridis_c(direction=-1) +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+          axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  
+}
+
+gghighlight_facet("All sectors",  "EUR 60 per tonne of CO2", "Including emissions from the combustion of biomass")
+
+# pmap(vars, gghighlight_facet)
+
+
+```
+
+## Fossil fuel subsidies per capita
+
+Coming soon
+
+## Emissions-weighted carbon prices
+
+Coming soon
