@@ -30,25 +30,35 @@ vars <- cps %>% distinct(Sector,Price,Coverage) %>% rename(s=1,p=2,c=3)
 
 vars_core <- vars %>% slice_head(n=14) %>% slice_tail(n=7)
 
-gghighlight_facet <- function(s,p,c) {
-  
+gghighlight_facet <- function(s, p, c) {
   data <- cps %>%
-    subset(Sector == s & Price == p & Coverage == c) %>% 
+    subset(Sector == s & Price == p & Coverage == c) %>%
     group_by(Year) %>% mutate(Rank = dense_rank(desc(Value)))
   
-  data %>% 
+  data %>%
     ggplot(aes(Year, Value)) +
-    geom_line(aes(group=ccode),size=1) +
-    geom_point(aes(color=Rank),size=3) +
-    gghighlight(unhighlighted_params = list(linewidth=0.5,alpha=0.5),
-              use_direct_label = FALSE) +
+    geom_line(aes(group = ccode), size = 1) +
+    gghighlight(
+      unhighlighted_params = list(linewidth = 0.5, alpha = 0.5),
+      use_direct_label = FALSE
+    ) +
+    geom_point(aes(color = Rank), size = 3) +
     theme_bw() +
-    facet_wrap(~ccode) +
-    labs(title = "Carbon Pricing Scores among 44 countries, 2012-2018",
-         subtitle = glue::glue("Sector: {s}, Price level: {p}, Coverage: {c}")) +
-    scale_color_viridis_c(direction=-1) +
-    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
-          axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+    facet_wrap( ~ ccode) +
+    labs(
+      title = "Carbon Pricing Scores among 44 countries, 2012-2018",
+      subtitle = glue::glue("Sector: {s}, Price level: {p}, Coverage: {c}")
+    ) +
+    scale_color_viridis_c(direction = -1) +
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.text.x = element_text(
+        angle = 90,
+        vjust = 0.5,
+        hjust = 1
+      )
+    ) + scale_x_continuous(breaks = c(2012, 2015, 2018))
   
 }
 
@@ -91,14 +101,14 @@ cps_plots[[4]]
 
 ```
 
-#### Agriculture and fisheries
+#### Agriculture
 ```{r agriculture}
 
 cps_plots[[5]]
 
 ```
 
-#### Residential and commercial
+#### Buildings
 ```{r buildings}
 
 cps_plots[[6]]
@@ -119,5 +129,9 @@ cps_plots[[7]]
 Coming soon
 
 ## Emissions-weighted carbon prices
+
+Coming soon
+
+## Number of climate change laws
 
 Coming soon
