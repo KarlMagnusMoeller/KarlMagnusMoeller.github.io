@@ -14,13 +14,11 @@ This page provides an overview of how countries compare to each other across tim
 
 ## Carbon pricing scores
 
-The OECD has provided a fantastic public service to those interested in comparative climate policy by calculated not only explicit carbon prices but the total taxation of CO~2~ emissions that results from various energy-related policy instruments including explicit carbon prices and emissions trading schemes and fuel excise taxes. The downside of this data is that it covers just 44 countries for three years; 2012, 2015, and 2018. This illustrates how demanding the creation of more encompassing climate policy indicators really is.
+The OECD has provided a fantastic public service to those interested in comparative climate policy by calculating not only explicit carbon prices but the total taxation of energy-related CO~2~ emissions that results from various energy-related policy instruments including explicit carbon prices, emissions trading schemes and fuel excise taxes. Specifically, the CPS measures the share of emissions prices at at least a given price level (30, 60, or 120 USD). The downside of this data is that it covers just 44 countries for three years; 2012, 2015, and 2018. This illustrates how demanding the creation of more encompassing climate policy indicators really is. Switch between tabs to get a disaggregated view of Carbon Pricing Scores at a sectoral level. 
+
+::: panel-tabset
 
 ```{r cps}
-
-#| warning: false
-#| echo: false
-#| error: false
 
 pacman::p_load(tidyverse, gghighlight)
 
@@ -29,6 +27,8 @@ cps <- read.csv(here::here("data","OECD_effective_carbon_rates_2012_2018.csv")) 
   filter(ccode != "ALL" & INDICATOR == "CPS")
 
 vars <- cps %>% distinct(Sector,Price,Coverage) %>% rename(s=1,p=2,c=3)
+
+vars_core <- vars %>% slice_head(n=14) %>% slice_tail(n=7)
 
 gghighlight_facet <- function(s,p,c) {
   
@@ -52,12 +52,67 @@ gghighlight_facet <- function(s,p,c) {
   
 }
 
-gghighlight_facet("All sectors",  "EUR 60 per tonne of CO2", "Including emissions from the combustion of biomass")
+#gghighlight_facet("All sectors",  "EUR 60 per tonne of CO2", "Including emissions from the combustion of biomass")
 
-# pmap(vars, gghighlight_facet)
+cps_plots <- pmap(vars_core, gghighlight_facet)
 
 
 ```
+
+#### All sectors
+
+```{r all}
+
+cps_plots[[1]]
+
+```
+
+
+#### Road
+```{r road}
+
+cps_plots[[2]]
+
+```
+
+
+#### Off-road
+```{r offroad}
+
+cps_plots[[3]]
+
+```
+
+
+#### Industry
+```{r industry}
+
+cps_plots[[4]]
+
+```
+
+#### Agriculture and fisheries
+```{r agriculture}
+
+cps_plots[[5]]
+
+```
+
+#### Residential and commercial
+```{r buildings}
+
+cps_plots[[6]]
+
+```
+
+#### Electricity
+```{r electricity}
+
+cps_plots[[7]]
+
+```
+
+:::
 
 ## Fossil fuel subsidies per capita
 
