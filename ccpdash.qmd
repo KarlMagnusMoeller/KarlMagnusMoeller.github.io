@@ -14,13 +14,18 @@ This page provides an overview of how countries compare to each other across tim
 
 ## Carbon pricing scores
 
-The OECD has provided a fantastic public service to those interested in comparative climate policy by calculating not only explicit carbon prices but the total taxation of energy-related CO~2~ emissions that results from various energy-related policy instruments including explicit carbon prices, emissions trading schemes and fuel excise taxes. Specifically, the CPS measures the share of emissions prices at at least a given price level (30, 60, or 120 USD). The downside of this data is that it covers just 44 countries for three years; 2012, 2015, and 2018. This illustrates how demanding the creation of more encompassing climate policy indicators really is. Switch between tabs to get a disaggregated view of Carbon Pricing Scores at a sectoral level. 
+The OECD has provided a fantastic public service to those interested in comparative climate policy by calculating not only explicit carbon prices but the total taxation of energy-related CO~2~ emissions that results from various energy-related policy instruments including explicit carbon prices, emissions trading schemes and fuel excise taxes. Specifically, the CPS measures the share of emissions priced at a given price level (30, 60, or 120 USD) or above The downside of this data is that it covers just 44 countries for three years; 2012, 2015, and 2018. This illustrates how demanding the creation of more encompassing climate policy indicators is. The data is described in the OECD report series entitled Effective Carbon Rates.[^1] You can switch between tabs to get a disaggregated view of Carbon Pricing Scores at a sectoral level.
+
+[^1]: See https://www.oecd.org/tax/tax-policy/effective-carbon-rates-2021-0e8e24f5-en.htm
 
 ::: panel-tabset
-
 ```{r cps}
 
-pacman::p_load(tidyverse, gghighlight)
+pacman::p_load(tidyverse, 
+               gghighlight,
+               readxl,
+               janitor,
+               countrycode)
 
 cps <- read.csv(here::here("data","OECD_effective_carbon_rates_2012_2018.csv")) %>% 
   rename(ccode = 1) %>% 
@@ -62,7 +67,8 @@ gghighlight_facet <- function(s, p, c) {
   
 }
 
-#gghighlight_facet("All sectors",  "EUR 60 per tonne of CO2", "Including emissions from the combustion of biomass")
+# to test function manually before using pmap
+# gghighlight_facet("All sectors",  "EUR 60 per tonne of CO2", "Including emissions from the combustion of biomass")
 
 cps_plots <- pmap(vars_core, gghighlight_facet)
 
@@ -77,24 +83,24 @@ cps_plots[[1]]
 
 ```
 
-
 #### Road
+
 ```{r road}
 
 cps_plots[[2]]
 
 ```
 
-
 #### Off-road
+
 ```{r offroad}
 
 cps_plots[[3]]
 
 ```
 
-
 #### Industry
+
 ```{r industry}
 
 cps_plots[[4]]
@@ -102,6 +108,7 @@ cps_plots[[4]]
 ```
 
 #### Agriculture
+
 ```{r agriculture}
 
 cps_plots[[5]]
@@ -109,6 +116,7 @@ cps_plots[[5]]
 ```
 
 #### Buildings
+
 ```{r buildings}
 
 cps_plots[[6]]
@@ -116,21 +124,152 @@ cps_plots[[6]]
 ```
 
 #### Electricity
+
 ```{r electricity}
 
 cps_plots[[7]]
 
 ```
-
 :::
 
 ## Fossil fuel subsidies per capita
 
-Coming soon
+Government subsidies that reduce the price of producing and/or consuming fossil energy constitutes a key obstacle to decarbonization and their reduction has become a global political priority. This is reflected in increasing efforts to measure fossil fuel subsidy amounts among international organisations including the OECD, IMF and IEA. The website fossilfuelsubsidytracker.org combines these data sources into one data set. The methods used across organisations are not entirely comparable (see the [methodology](https://fossilfuelsubsidytracker.org/methodology/) page on fossilfuelsubsidytracker.org). For that reason, groups of countries are shown separately based on which organisation constitutes the main source of country data.[^2] Data is presented relative to both gross domestic product (in current USD, like the subsidy data) and relative to population figures.
 
-## Emissions-weighted carbon prices
+[^2]: Countries with IMF data are omitted because this panel mostly includes states without any subsidies measured using the IMF's the price gap approach.
 
-Coming soon
+```{r ffs}
+
+wb_gdp_pop <- read_csv(here::here("data","WB_WDI_various.csv")) %>%
+  janitor::clean_names() %>% 
+  filter(!is.na(series_code)) %>% 
+  pivot_longer(cols=starts_with("x"), names_to = "year", values_to = "value") %>% 
+  mutate(year = as.numeric(substr(year,2,5)),
+         value = as.numeric(value)) %>% 
+  rename(ccode = country_code) %>%
+  distinct(ccode,year,series_name, .keep_all= TRUE) %>% 
+  pivot_wider(id_cols=c(ccode,year),names_from=series_name,values_from=value) %>%
+  janitor::clean_names() %>% 
+  select(ccode,year,gdp_current_us,population_total) %>% 
+  arrange(ccode,year)
+
+
+fossil_subsidies <-
+  readxl::read_excel(here::here("data", "FossilFuelSubsidiesTracker_CountryData.xlsx"),
+                     sheet = "fulldata") %>%
+  janitor::clean_names() %>%
+  group_by(country, year) %>%
+  summarise(
+    total_sub = sum(usd_nominal, na.rm = T),
+    non_na = sum(!is.na(usd_nominal)),
+    main_source = names(which.max(table(source)))
+  ) %>%
+  ungroup() %>%
+  mutate(
+    ccode = countrycode::countrycode(
+      sourcevar = country,
+      origin = "country.name",
+      destination = "iso3c"
+    )
+  ) %>%
+  mutate(ccode = case_when(
+    country == "Kosovo" ~ "XKX",
+    country == "Micronesia" ~ "FSM",
+    TRUE ~ ccode
+  )) %>% 
+  left_join(wb_gdp_pop,by=c("ccode","year")) %>% 
+  mutate(ffsub_gdp = total_sub/gdp_current_us,# in current USD
+         ffsub_pc = total_sub/population_total) %>% 
+  #mutate(ffsub_gdp_ln = log1p (ffsub_gdp), ffsub_pc_ln = log1p(ffsub_pc)) %>% 
+  pivot_longer(
+    cols = c(ffsub_gdp, ffsub_pc),
+    names_to = "Indicator",
+    values_to = "Value"
+  ) %>% 
+  mutate(Indicator = 
+           case_when(Indicator == "ffsub_gdp" ~ "Subsidies to GDP (current)",
+                     Indicator == "ffsub_pc" ~ "Subsidies per capita")) %>% 
+  rename(Source = main_source,
+         Year = year)
+
+
+vars_ffs <- fossil_subsidies %>% 
+  distinct(Source,Indicator) %>% rename(s=1,i=2)
+
+
+gghighlight_facet <- function(s, i) {
+  
+  data <- fossil_subsidies %>%
+    subset(Source == s & Indicator == i) %>%
+    group_by(Year) %>% mutate(Rank = dense_rank(Value))
+  
+  data %>%
+    ggplot(aes(Year, Value)) +
+    geom_line(aes(group = ccode), size = 1) +
+    gghighlight(
+      unhighlighted_params = list(linewidth = 0.5, alpha = 0.5),
+      use_direct_label = FALSE
+    ) +
+    geom_point(aes(color = Rank), size = 1) +
+    theme_bw() +
+    facet_wrap( ~ ccode) +
+    labs(
+      title = "Fossil fuel subsidies in current USD, 2010-2021",
+      subtitle = glue::glue("Source: {s}, Indicator: {i}")
+    ) +
+    scale_color_viridis_c(direction = -1) +
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.text.x = element_text(
+        angle = 90,
+        vjust = 0.5,
+        hjust = 1
+      )
+    )  + 
+    scale_x_continuous(breaks = c(2010,2012,2014,2016,2018,2020))
+    
+}
+
+# to test function manually before using pmap
+# gghighlight_facet("IEA","Subsidies to GDP")
+
+ffs_plots <- pmap(vars_ffs, gghighlight_facet)
+```
+
+::: panel-tabset
+#### IEA data (GDP)
+
+```{r ffsieagdp}
+
+ffs_plots[[3]]
+
+```
+
+#### IEA data (p.c.)
+
+```{r ffsieapc}
+
+ffs_plots[[4]]
+
+```
+
+#### OECD data (GDP)
+
+```{r ffsoecdgdp}
+
+ffs_plots[[5]]
+
+```
+
+#### OECD data (p.c.)
+
+```{r ffsoecdpc}
+
+ffs_plots[[6]]
+
+```
+:::
 
 ## Number of climate change laws
 

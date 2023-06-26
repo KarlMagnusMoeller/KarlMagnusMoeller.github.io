@@ -60,14 +60,14 @@
     "href": "ccpdash.html#carbon-pricing-scores",
     "title": "Comparative climate politics dashboard",
     "section": "Carbon pricing scores",
-    "text": "Carbon pricing scores\nThe OECD has provided a fantastic public service to those interested in comparative climate policy by calculating not only explicit carbon prices but the total taxation of energy-related CO2 emissions that results from various energy-related policy instruments including explicit carbon prices, emissions trading schemes and fuel excise taxes. Specifically, the CPS measures the share of emissions prices at at least a given price level (30, 60, or 120 USD). The downside of this data is that it covers just 44 countries for three years; 2012, 2015, and 2018. This illustrates how demanding the creation of more encompassing climate policy indicators really is. Switch between tabs to get a disaggregated view of Carbon Pricing Scores at a sectoral level.\n\nAll sectorsRoadOff-roadIndustryAgricultureBuildingsElectricity"
+    "text": "Carbon pricing scores\nThe OECD has provided a fantastic public service to those interested in comparative climate policy by calculating not only explicit carbon prices but the total taxation of energy-related CO2 emissions that results from various energy-related policy instruments including explicit carbon prices, emissions trading schemes and fuel excise taxes. Specifically, the CPS measures the share of emissions priced at a given price level (30, 60, or 120 USD) or above The downside of this data is that it covers just 44 countries for three years; 2012, 2015, and 2018. This illustrates how demanding the creation of more encompassing climate policy indicators is. The data is described in the OECD report series entitled Effective Carbon Rates.1 You can switch between tabs to get a disaggregated view of Carbon Pricing Scores at a sectoral level.\n\nAll sectorsRoadOff-roadIndustryAgricultureBuildingsElectricity"
   },
   {
     "objectID": "ccpdash.html#fossil-fuel-subsidies-per-capita",
     "href": "ccpdash.html#fossil-fuel-subsidies-per-capita",
     "title": "Comparative climate politics dashboard",
     "section": "Fossil fuel subsidies per capita",
-    "text": "Fossil fuel subsidies per capita\nComing soon"
+    "text": "Fossil fuel subsidies per capita\nGovernment subsidies that reduce the price of producing and/or consuming fossil energy constitutes a key obstacle to decarbonization and their reduction has become a global political priority. This is reflected in increasing efforts to measure fossil fuel subsidy amounts among international organisations including the OECD, IMF and IEA. The website fossilfuelsubsidytracker.org combines these data sources into one data set. The methods used across organisations are not entirely comparable (see the methodology page on fossilfuelsubsidytracker.org). For that reason, groups of countries are shown separately based on which organisation constitutes the main source of country data.2 Data is presented relative to both gross domestic product (in current USD, like the subsidy data) and relative to population figures.\n\n\n\n\nIEA data (GDP)IEA data (p.c.)OECD data (GDP)OECD data (p.c.)"
   },
   {
     "objectID": "ccpdash.html#emissions-weighted-carbon-prices",
