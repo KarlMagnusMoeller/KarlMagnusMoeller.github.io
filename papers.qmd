@@ -1,11 +1,41 @@
 ---
-title: "Working papers"
+title: "Research papers"
 ---
 
-## Who believes in green growth?
+----
 
-Abstract: This note asks what types of individuals are more or less likely to believe in the core tenet of green growth, namely that climate change mitigation and environmental protection is compatible with or complementary to continued economic growth. Based on data from ISSP 2010, I offer a preliminary answer. Factors associated with believing in green growth include being highly educated, politically right wing, having high socio-economic status, and having managerial employment. Several of these findings indicate that those who are further removed from the extractive and manufacturing processes that result in environmental degradation may perceive the prospects for green growth as being more realistic.
+#### Domestic renewable energy industries and national decarbonization policy
 
-## The narrow impact of employment-related greenhouse gas emissions on climate policy opinions
+Peer-reviewed article published in [Energy Policy](https://doi.org/10.1016/j.enpol.2024.114249)
 
-Abstract: A burgeoning literature identifies geographic or employment-based ties to fossil fuel production as a constraining factor in shaping public climate policy opinions but also points to certain limits to this effect. Bechtel, Genovese, and Scheve (2019) make an important contribution to this strand of research by showing that employment in high-emissions sectors more generally has a substantially large, negative influence on a set of general climate politics opinions. In this research note, I replicate and extend their findings using their own data as well as the 2016 European Social Survey. The original findings appear verifiable, robust, and repeatable. Investigating their generalizability, I propose and find support for the hypothesis that this negative effect is more pronounced for fossil phaseout policies like carbon taxes than for green industrial policies that subsidize low-emissions technologies.
+::: {.callout-note collapse=true appearance="minimal" icon=false}
+
+## Abstract
+Does the growth of renewable energy industries catalyze national decarbonization policy? The idea that stronger domestic renewable energy industries increase the political feasibility of stringent energy and climate policies aiming to phase out fossil fuels has been championed by proponents of policy sequencing and underpins the global pivot to green industrial policy. Yet, the conditions necessary for such an effect to materialize have not been fully spelled out and its empirical veracity not been systematically scrutinized. This paper contends that the willingness and ability of renewable energy industries to influence policy should be weaker for fossil fuel phaseout policies compared to green industrial policies because of more diffuse material interests, less access to policymaking, and stronger countermobilization. The first large-scale investigation of this relation using extensive time-series cross-sectional data provides no evidence of a systematic positive effect of renewable energy industry strength on carbon pricing or fossil fuel subsidy phaseouts. These findings challenge the widespread argument that the emergence of domestic low-carbon industries translates into more ambitious decarbonization policy. Scholars and policymakers should scrutinize the mechanisms and scope conditions underlying this assumed relationship.
+:::
+
+----
+
+#### This paper temporarily removed for peer-review
+
+----
+
+#### Green Jobs in the Backyard: Do Local Renewable Energy Industries Increase Support for the Energy Transition?
+
+Working paper available upon request
+
+::: {.callout-note collapse=true appearance="minimal" icon=false}
+## Abstract
+The politics of the energy transition is local. Scholarship on the geographically concentrated negative effects of local fossil fuel dependencies and wind turbine construction shows this. Yet, existing work focused on the local causes of climate policy backlash has not considered the rise of low-carbon industries. A central, but largely untested, assumption underpinning the global embrace of green industrial policy is that the emergence of green industries that generates local jobs and growth will have positive (feedback) effects on popular support for the energy transition more generally. In this article, I spell out the demanding causal chain necessary for that effect to materialize and test this argument using the uniquely suitable case of the wind energy industry in Denmark. I collect novel geocoded data on wind industry production sites and test the association between local wind industry presence and pro- and anti-climate voting in Danish parliamentary elections from 2007 to 2022 at the level of electoral precincts. Consistent null results reveal that the presence of this structurally important renewable energy industry has not meaningfully increased popular support for the energy transition at the local level. Mechanism tests indicate that local wind industries do generate heightened local interest and media attention, but that the industry-policy link is not salient, and that citizens’ climate policy preferences remain unaffected.
+:::
+
+----
+
+#### Big Investments, No Electoral Reward: The Inflation Reduction Act, Low-carbon Investments, and the 2024 US Presidential Election
+
+Working paper available on [OSF](https://doi.org/10.31219/osf.io/7qhns)
+
+::: {.callout-note collapse=true appearance="minimal" icon=false}
+## Abstract
+The Inflation Reduction Act is one of the most prominent cases of green industrial policy. It was motivated by a strategic intention of increasing popular support for both climate policy and the Democratic party. Since its passage in August 2022, large private-sector investments in low-carbon manufacturing have been announced in many electorally pivotal areas in the United States. The expectation that these spatially concentrated benefits would boost local support for the pro-climate incumbent party – the Democrats – is supported by political science theories of local economic voting, mass feedback effects, and climate policy sequencing. Using propensity score matching and a difference-in-differences design, I estimate the causal effect of these announced low-carbon investments on the county-level two-party vote share of the Democratic party in the 2024 presidential election. I identify a substantially negligible and statistically insignificant positive effect (β = 0.153, 95% CI = [-0.100;0.405]) that is stable across various robustness checks. Given the most-likely nature of this case, my findings raise more general questions about the ability of green industrial policies to generate short-term electoral rewards and hereby challenge a core motivation for this increasingly prevalent climate policy strategy.
+:::

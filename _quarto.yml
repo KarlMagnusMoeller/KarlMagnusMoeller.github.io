@@ -8,9 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
       - papers.qmd
-      - projects.qmd
+      - about.qmd
       - ccpdash.qmd
 
 format:
