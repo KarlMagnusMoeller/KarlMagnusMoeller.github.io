@@ -1,12 +1,10 @@
 ---
 title: "About me"
 about:
-  template: jolla
+  template: trestles
   image: images\picture.jpg
 ---
 
-Until this January, I was a PhD student in the Department of Political Science, Aarhus University in Denmark affiliated with the Comparative Politics section. In my work, I do research that can help us understand the political obstacles to, and ultimately speed up, decarbonisation. My PhD research focuses specifically on the political effects of expanding renewable energy industries. Do countries where these industries become economically important also become more willing and able to phase out fossil fuels through ambitious climate and energy policy?
+Until this January, I was a PhD student in the Department of Political Science, Aarhus University affiliated with the Comparative Politics section. Before that, I studied at Copenhagen Business School and the London School of Economics (see my [teaching and other professional experience](about.qmd)). In my work, I do research that can help us understand the political obstacles to — and ultimately speed up — decarbonisation (see my[research papers](papers.qmd)). I am particularly interested in the interplay between markets and politics, including the potential for policy-led industrial transformations that feed back into the political process. My PhD research focuses specifically on the political effects of expanding renewable energy industries at the level of countries, firms, and voters. Essentially, I ask whether the domestic growth of these industries make countries more willing and able to phase out fossil fuels through ambitious climate and energy policy and why (not).
 
-When I'm not pondering how best to answer this question, I am mostly hanging out with my two kids on the many playgrounds in and around Aarhus or cooking them food they will most likely refuse to eat (unless it is porridge).
-
-This website contains an overview of my [research papers](papers.qmd) as well as a list of my [teaching and other professional experience](about.qmd).
+When I'm not trying to answer these questions, I am mostly hanging out with my two kids on the many playgrounds in and around Aarhus, cooking them food they will most likely refuse to eat (unless it's porridge), running, or obsessing over coffee.
